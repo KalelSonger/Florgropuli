@@ -3,3 +3,8 @@
 
 # GitHub config
 /.github/ @Isaac-Stephens
+
+# TODO:
+# Once project roles are fully defined, assign CODEOWNERS
+# based on the area being changed.
+# Example: Frontend -> Frontend team, Backend -> Backend team, etc.
