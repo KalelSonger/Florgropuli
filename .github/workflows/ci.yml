@@ -1,0 +1,26 @@
+name: CI
+
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Check repository
+              run:  |
+                    echo "Repository checked out successfully"
+                    ls -la
+            # TODO: Set up language / framework
+            # TODO: Install dependencies
+            # TODO: Run formatter
+            # TODO: Run linter
+            # TODO: Run Tests
+            # TODO: Build Application
