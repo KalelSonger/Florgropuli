@@ -5,6 +5,25 @@
 - `main` should always be in a reasonalbly "working" state.
 - **NO DIRECT PUSHES TO `main` EVER**
 
+```bash
+# Get up to date with `main`
+git checkout main
+git pull origin main
+
+# Make your branch
+git checkout -b new-branch-name
+
+# Do your thing... ... ...
+
+# Check your status create your commit
+git status .
+git add .
+git commit -m"commit-name"
+
+# Create a PR
+git push -u origin HEAD && gh pr create --base main --title "Your PR Title" --body "Your PR Description"
+```
+
 ## 2. Use Feature Branches
 ex:
 ```
