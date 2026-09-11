@@ -19,6 +19,13 @@ jobs:
                 PR_TITLE: ${{ github.event.pull_request.title }}
                 REPO: ${{ github.repository }}
               run: |
+                echo "Current PR title "$PR_TITLE"
+                # dont mod already-numbered PR
+                if [[ "$PR_TITLE" =~ ^#[0-9]{4}: ]]; then
+                    echo "PR is already numbered."
+                    exit 0
+                fi
+
                 # find highest existing PR prefix
                 LAST=$(gh pr list \
                   --repo "$REPO" \
@@ -27,7 +34,7 @@ jobs:
                   --json title \
                   --jq '.[].title' |
                   grep -oE '^#[0-9]{4}:' |
-                  grep -oE '^[0-9]{4}' |
+                  grep -oE '[0-9]{4}' |
                   sort -n |
                   tail -1)
 
@@ -37,15 +44,10 @@ jobs:
                   NEXT=$((10#$LAST + 1))
                 fi
 
-                PREFIX=$(printf "#%04d" "NEXT")
-
-                # don't number twice
-                if [[ "$PR_TITLE" =~ ^#[0-9]{4}: ]]; then
-                  exit 0
-                fi
+                PREFIX=$(printf "#%04d" "$NEXT")
 
                 NEW_TITLE="$PREFIX: $PR_TITLE"
 
                 gh pr edit "$PR_NUMBER" \
-                  --repo "$REPO"
+                  --repo "$REPO" \
                   --title "$NEW_TITLE"
