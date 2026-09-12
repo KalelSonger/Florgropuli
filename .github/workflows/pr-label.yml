@@ -1,18 +1,18 @@
-name: Number Pull Requests
+name: Number & Label Pull Requests
 
 on:
     pull_request:
-        types: [opened]
+        types: [opened, synchronize, edited]
 
 permissions:
     pull-requests: write
 
 jobs:
-    number-pr:
+    rename-pr:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Number PR
+            - name: Rename PR
               env:
                 GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 PR_NUMBER: ${{ github.event.pull_request.number }}
@@ -48,6 +48,31 @@ jobs:
 
                 NEW_TITLE="$PREFIX: $PR_TITLE"
 
+                # Direcory lable
+                CHANGED_FILES=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json files --jq '.files[].path')
+                LABELS_TO_ADD=""
+
+
+                # TODO: When new direcories format is decided settup PR
+                #       labels here.
+                # -------------------------------------------------------
+
+                if echo "$CHANGED_FILES" | grep -q "^.github/"; then
+                  LABELS_TO_ADD="${LABELS_TO_ADD:+$LABELS_TO_ADD,}CI/CD"
+                fi
+
+                if echo "$CHANGED_FILES" | grep -q "^Docs/"; then
+                  LABELS_TO_ADD="${LABELS_TO_ADD:+$LABELS_TO_ADD,}Docs"
+                fi
+
+                # -------------------------------------------------------
+                
+                LABEL_FLAG=""
+                if [ -n "$LABELS_TO_ADD" ]; then
+                  LABEL_FLAG="--add-label $LABELS_TO_ADD"
+                fi
+
                 gh pr edit "$PR_NUMBER" \
                   --repo "$REPO" \
-                  --title "$NEW_TITLE"
+                  --title "$NEW_TITLE" \
+                  $LABEL_FLAG
