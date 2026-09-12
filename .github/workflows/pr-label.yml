@@ -19,7 +19,7 @@ jobs:
                 PR_TITLE: ${{ github.event.pull_request.title }}
                 REPO: ${{ github.repository }}
               run: |
-                echo "Current PR title "$PR_TITLE"
+                echo "Current PR title $PR_TITLE"
                 # dont mod already-numbered PR
                 if [[ "$PR_TITLE" =~ ^#[0-9]{4}: ]]; then
                     echo "PR is already numbered."
@@ -30,7 +30,8 @@ jobs:
                 LAST=$(gh pr list \
                   --repo "$REPO" \
                   --state all \
-                  --limit 1000 \
+                  --limit 10 \
+                  --search "sort:created-desc" \
                   --json title \
                   --jq '.[].title' |
                   grep -oE '^#[0-9]{4}:' |
@@ -48,12 +49,12 @@ jobs:
 
                 NEW_TITLE="$PREFIX: $PR_TITLE"
 
-                # Direcory lable
+                # Directory lable
                 CHANGED_FILES=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json files --jq '.files[].path')
                 LABELS_TO_ADD=""
 
 
-                # TODO: When new direcories format is decided settup PR
+                # TODO: When new directories format is decided settup PR
                 #       labels here.
                 # -------------------------------------------------------
 
