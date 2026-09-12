@@ -1,0 +1,79 @@
+name: Number & Label Pull Requests
+
+on:
+    pull_request:
+        types: [opened, synchronize, edited]
+
+permissions:
+    pull-requests: write
+
+jobs:
+    rename-pr:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Rename PR
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                PR_NUMBER: ${{ github.event.pull_request.number }}
+                PR_TITLE: ${{ github.event.pull_request.title }}
+                REPO: ${{ github.repository }}
+              run: |
+                echo "Current PR title $PR_TITLE"
+                # dont mod already-numbered PR
+                if [[ "$PR_TITLE" =~ ^#[0-9]{4}: ]]; then
+                    echo "PR is already numbered."
+                    exit 0
+                fi
+
+                # find highest existing PR prefix
+                LAST=$(gh pr list \
+                  --repo "$REPO" \
+                  --state all \
+                  --limit 10 \
+                  --search "sort:created-desc" \
+                  --json title \
+                  --jq '.[].title' |
+                  grep -oE '^#[0-9]{4}:' |
+                  grep -oE '[0-9]{4}' |
+                  sort -n |
+                  tail -1)
+
+                if [ -z "$LAST" ]; then
+                  NEXT=0
+                else
+                  NEXT=$((10#$LAST + 1))
+                fi
+
+                PREFIX=$(printf "#%04d" "$NEXT")
+
+                NEW_TITLE="$PREFIX: $PR_TITLE"
+
+                # Directory lable
+                CHANGED_FILES=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json files --jq '.files[].path')
+                LABELS_TO_ADD=""
+
+
+                # TODO: When new directories format is decided settup PR
+                #       labels here.
+                # -------------------------------------------------------
+
+                if echo "$CHANGED_FILES" | grep -q "^.github/"; then
+                  LABELS_TO_ADD="${LABELS_TO_ADD:+$LABELS_TO_ADD,}CI/CD"
+                fi
+
+                if echo "$CHANGED_FILES" | grep -q "^Docs/"; then
+                  LABELS_TO_ADD="${LABELS_TO_ADD:+$LABELS_TO_ADD,}Docs"
+                fi
+
+                # -------------------------------------------------------
+                
+                LABEL_FLAG=""
+                if [ -n "$LABELS_TO_ADD" ]; then
+                  LABEL_FLAG="--add-label $LABELS_TO_ADD"
+                fi
+
+                gh pr edit "$PR_NUMBER" \
+                  --repo "$REPO" \
+                  --title "$NEW_TITLE" \
+                  $LABEL_FLAG
