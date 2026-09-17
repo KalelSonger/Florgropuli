@@ -1,2 +1,4 @@
-Flask
-python-dotenv
+Flask           # web framework
+python-dotenv   # env library
+black           # formatter
+ruff            # linter

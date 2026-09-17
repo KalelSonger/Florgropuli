@@ -24,10 +24,10 @@ jobs:
                 python -m pip install --upgrade pip
                 pip install -r requirements.txt
             
-            # TODO: Run formatter
-            # TODO: Run linter
-            # TODO: Run Tests
-            # TODO: Build Application
+            # TODO: Run formatter       (using black)
+            # TODO: Run linter          (using ruff)
+            # TODO: Run Tests           (consult w/ ethan)
+            # TODO: Build Application   
 
             - name: Check repository
               run:  |
