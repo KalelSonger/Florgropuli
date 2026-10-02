@@ -2,9 +2,9 @@ name: CI
 
 on:
     pull_request:
+        branches: [ main ]
     push:
-        branches:
-            - main
+        branches: [ main ]
 
 jobs:
     test:
@@ -13,14 +13,38 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
+            
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.13'   
+                         
+            - name: Install Dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+            
+            # Run Python formatter
+            - name: Check formatting
+              run: |
+                ruff format --check .
+              
+            # Run Python linter
+            - name: Run linter
+              run: |
+                ruff check . --fix
+
+            # Run Python Tests
+            - name: Run tests
+              run: |
+                pytest
+
+            # TODO: Build Application 
+            
+            
+            # TODO: Javascript stuff
 
             - name: Check repository
               run:  |
                     echo "Repository checked out successfully"
                     ls -la
-            # TODO: Set up language / framework
-            # TODO: Install dependencies
-            # TODO: Run formatter
-            # TODO: Run linter
-            # TODO: Run Tests
-            # TODO: Build Application

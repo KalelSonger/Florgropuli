@@ -1,0 +1,4 @@
+Flask           # web framework
+python-dotenv   # env library
+ruff            # linter
+pytest          # testing framework
