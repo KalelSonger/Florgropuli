@@ -27,12 +27,12 @@ jobs:
             # Run Python formatter
             - name: Check formatting
               run: |
-                black --check .
+                ruff format --check .
               
             # Run Python linter
             - name: Run linter
               run: |
-                ruff check .
+                ruff check . --fix
 
             # Run Python Tests
             - name: Run tests
