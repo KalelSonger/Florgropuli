@@ -29,8 +29,16 @@ jobs:
               run: |
                 black --check .
               
-            # TODO: Run linter          (using ruff)
-            # TODO: Run Tests           (using pytest)
+            # Run Python linter
+            - name: Run linter
+              run: |
+                ruff check .
+
+            # Run Python Tests           (using pytest)
+            - name: Run tests
+              run: |
+                pytest
+
             # TODO: Build Application 
             
             
