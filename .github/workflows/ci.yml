@@ -34,7 +34,7 @@ jobs:
               run: |
                 ruff check .
 
-            # Run Python Tests           (using pytest)
+            # Run Python Tests
             - name: Run tests
               run: |
                 pytest
