@@ -2,3 +2,4 @@ Flask           # web framework
 python-dotenv   # env library
 black           # formatter
 ruff            # linter
+pytest
