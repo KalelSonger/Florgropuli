@@ -2,3 +2,4 @@ personal_notes/*
 *.env
 .venv
 .ruff_cache
+__pycache__/

@@ -4,6 +4,9 @@
 # GitHub config
 /.github/ @Isaac-Stephens
 
+# Docs
+/Docs/ @Els2065
+
 # TODO:
 # Once project roles are fully defined, assign CODEOWNERS
 # based on the area being changed.
