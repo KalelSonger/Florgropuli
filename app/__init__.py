@@ -12,7 +12,7 @@ def create_app():
         template_folder="frontend/templates",
         static_folder="frontend/static",
     )
-    app.secret_key = "SECRET_KEY"
+    app.secret_key = os.environ["SECRET_KEY"]
 
     from .backend.routes import routes  # backend file for page routing
 
