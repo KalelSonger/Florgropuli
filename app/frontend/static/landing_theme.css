@@ -1,0 +1,11 @@
+:root {
+  /* Colors */
+  --bg: #dbf5f4;
+  --text: #1d58a5;
+  --muted: #6b6560;
+  --accent: #2e9273;
+
+  /* Fonts */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
