@@ -1,1 +1,47 @@
-mediaMaps, a service of Florgropuli
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Florgropuli · mediaMaps</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='landing_theme.css') }}">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      text-align: center;
+    }
+    .team {
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
+    }
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      letter-spacing: -0.03em;
+      margin: 8px 0;
+    }
+    h1 span { color: var(--accent); }
+    p { color: var(--muted); margin: 0; }
+    .desc { max-width: 36ch; margin: 0 auto 12px; font-size: 1.1rem; color: var(--muted); }
+    .soon { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="team">Florgropuli presents</p>
+    <h1>media<span>Maps</span></h1>
+    <p class="desc">Track what you read and watch, and see what's popular in your community on a local map.</p>
+    <p class="soon">More information coming soon.</p> 
+    <p class="soon">Public beta test spring 2027.</p>
+  </main>
+</body>
+</html>
