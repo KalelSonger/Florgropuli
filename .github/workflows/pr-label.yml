@@ -6,6 +6,7 @@ on:
 
 permissions:
     pull-requests: write
+    issues: write
 
 jobs:
     rename-pr:
@@ -53,7 +54,6 @@ jobs:
                 CHANGED_FILES=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json files --jq '.files[].path')
                 LABELS_TO_ADD=""
 
-
                 # TODO: When new directories format is decided settup PR
                 #       labels here.
                 # -------------------------------------------------------
@@ -67,11 +67,31 @@ jobs:
                 fi
 
                 # -------------------------------------------------------
+                if [ ${#LABELS_TO_ADD[@]} -gt 0 ]; then
+                  for label in "${LABELS_TO_ADD[@]}"; do
+                    if ! gh label list --repo "$REPO" --limit 200 --json name --jq '.[].name' | grep -Fxq "$label"; then
+                      gh label create "$label" --repo "$REPO" --color "ededed" >/dev/null
+                    fi
+                  done
+
+                  LABELS_CSV=$(IFS=,; echo "${LABELS_TO_ADD[*]}")
+                  gh pr edit "$PR_NUMBER" \
+                    --repo "$REPO" \
+                    --title "$NEW_TITLE" \
+                    --add-label "$LABELS_CSV"
+                else
+                  gh pr edit "$PR_NUMBER" \
+                    --repo "$REPO" \
+                    --title "$NEW_TITLE"
+                fi
+
                 
                 LABEL_FLAG=""
                 if [ -n "$LABELS_TO_ADD" ]; then
                   LABEL_FLAG="--add-label $LABELS_TO_ADD"
                 fi
+
+                
 
                 gh pr edit "$PR_NUMBER" \
                   --repo "$REPO" \
