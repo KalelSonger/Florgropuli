@@ -7,6 +7,14 @@
 # Docs
 /Docs/ @Els2065
 
+# Frontend
+/app/frontend/ @reozyx
+
+# Tests
+/tests/ @Delta8498
+
+# Backend (Alex when he adds his u-name)
+
 # TODO:
 # Once project roles are fully defined, assign CODEOWNERS
 # based on the area being changed.
