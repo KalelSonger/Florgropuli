@@ -1,0 +1,128 @@
+FLORGROPULI PROPRIETARY SOURCE CODE LICENSE
+
+Copyright (c) 2026 Florgropuli Contributors. All Rights Reserved.
+
+Effective Date: October 30, 2026
+
+1. PURPOSE AND SCOPE
+
+This Florgropuli Proprietary Source Code License ("License") establishes the terms under which individuals and organizations may access and review the source code, documentation, designs, and other original materials contained in the Florgropuli repository (collectively, the "Software").
+
+The Software is made publicly accessible for educational review, academic evaluation, professional portfolio assessment, and demonstration of the contributors' technical work.
+
+Public availability does not constitute a grant of open-source rights or permission for unrestricted use.
+
+2. COPYRIGHT AND OWNERSHIP
+
+2.1. All original source code, documentation, designs, architecture, and other copyrightable materials developed by the Florgropuli Contributors remain the intellectual property of their respective copyright holders.
+
+2.2. Each contributor retains ownership of their original contributions unless otherwise established through a separate written agreement.
+
+2.3. Nothing in this License transfers copyright ownership, intellectual property rights, or any other proprietary interest to persons accessing the repository.
+
+2.4. Third-party libraries, frameworks, dependencies, and other externally developed materials remain subject to their respective licenses and copyright notices.
+
+3. PERMITTED ACCESS AND REVIEW
+
+3.1. Subject to the restrictions in this License, permission is granted, free of charge, to access, view, and inspect the publicly available Software for the following purposes:
+
+- Personal educational review and learning.
+- Academic evaluation, coursework assessment, and research review.
+- Professional portfolio evaluation by prospective employers, recruiters, and hiring managers.
+- Inspection of software architecture, programming techniques, and project documentation.
+
+3.2. Such access is permitted only to the extent necessary for the purposes listed above and in accordance with applicable GitHub terms and conditions.
+
+3.3. No additional rights are granted by implication, estoppel, or otherwise.
+
+4. RESTRICTIONS
+
+Except where expressly authorized in writing by the applicable copyright holders or permitted by applicable law, persons accessing the Software shall not:
+
+4.1. Copy, reproduce, or distribute the Software or any substantial portion thereof, except for incidental copies technically necessary for permitted viewing and inspection.
+
+4.2. Modify, adapt, translate, or create derivative works based upon the Software.
+
+4.3. Use the Software, in whole or in part, in commercial products, services, applications, or production environments.
+
+4.4. Redistribute, sublicense, sell, lease, publish, or otherwise make the Software available to third parties.
+
+4.5. Incorporate the Software or substantial portions thereof into another software project, whether commercial or noncommercial.
+
+4.6. Remove, alter, or obscure copyright notices, attribution statements, or proprietary markings.
+
+4.7. Represent the Software or any original contribution as their own work.
+
+4.8. Use the Software for any purpose beyond the expressly permitted review activities without prior written authorization from the applicable copyright holders.
+
+5. CONTRIBUTOR RIGHTS
+
+5.1. Each Florgropuli Contributor retains the rights to their independently authored original contributions, subject to any separate agreements governing those contributions.
+
+5.2. Nothing in this License prohibits a contributor from using, modifying, distributing, or licensing their own independently owned work.
+
+5.3. Permission to license, distribute, or commercially exploit the complete Florgropuli project must be obtained from all copyright holders whose permission is legally required.
+
+5.4. Contributions from third parties do not automatically transfer ownership or grant additional licensing rights to the Florgropuli Contributors.
+
+6. THIRD-PARTY SOFTWARE
+
+6.1. The Software may incorporate or depend upon third-party libraries, frameworks, tools, and other components.
+
+6.2. Such components remain governed by their respective licenses.
+
+6.3. This License applies only to original materials owned by the Florgropuli Contributors and does not supersede third-party licensing obligations.
+
+6.4. Where required, third-party copyright notices and license terms shall be preserved.
+
+7. DATA AND PRIVACY
+
+7.1. The Software may process geographic, positional, or other location-related information ("Locational Data").
+
+7.2. No warranty is made regarding the accuracy, availability, confidentiality, integrity, or security of Locational Data processed by the Software.
+
+7.3. Public access to the source code does not authorize access to private deployments, databases, credentials, personal information, or nonpublic data.
+
+7.4. Any authorized deployment or use of the Software remains subject to applicable privacy, security, and data protection laws.
+
+8. DISCLAIMER OF WARRANTIES
+
+THE SOFTWARE AND ALL ACCOMPANYING MATERIALS ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDERS AND CONTRIBUTORS DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, SECURITY, AND FITNESS FOR A PARTICULAR PURPOSE.
+
+NO WARRANTY IS MADE THAT THE SOFTWARE WILL OPERATE WITHOUT INTERRUPTION, ERROR, DATA LOSS, OR SECURITY VULNERABILITIES.
+
+9. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDERS AND CONTRIBUTORS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING FROM ACCESS TO, REVIEW OF, OR USE OF THE SOFTWARE.
+
+THIS INCLUDES, WITHOUT LIMITATION, DAMAGES ARISING FROM DATA LOSS, DISCLOSURE OF LOCATION INFORMATION, SECURITY INCIDENTS, BUSINESS INTERRUPTION, OR SOFTWARE FAILURE.
+
+WHERE LIABILITY CANNOT LAWFULLY BE EXCLUDED, LIABILITY SHALL BE LIMITED TO THE MINIMUM EXTENT PERMITTED BY APPLICABLE LAW.
+
+10. TERMINATION
+
+10.1. Any rights granted under this License automatically terminate upon violation of its terms.
+
+10.2. Upon termination, the violating party must cease all activities requiring permission under this License and delete any copies retained under its authority, except where retention is required or independently permitted by applicable law.
+
+10.3. Termination does not affect any rights or remedies available to the copyright holders under applicable law.
+
+11. ADDITIONAL PERMISSIONS
+
+11.1. Individuals or organizations seeking permission to modify, distribute, deploy, incorporate, or commercially use the Software must obtain separate written authorization from the applicable copyright holders.
+
+11.2. Such authorization may be subject to additional terms, conditions, or licensing agreements.
+
+11.3. No individual contributor may grant rights to another contributor's independently owned work without appropriate authorization.
+
+12. GENERAL PROVISIONS
+
+12.1. Severability. If any provision of this License is determined to be invalid or unenforceable, the remaining provisions shall remain effective to the extent permitted by applicable law.
+
+12.2. No Waiver. Failure to enforce any provision shall not constitute a waiver of the right to enforce that provision in the future.
+
+12.3. Reservation of Rights. All rights not expressly granted under this License are reserved by their respective copyright holders.
+
+12.4. Entire License. This License constitutes the complete statement of permissions granted by the copyright holders through this document, except where a separate written agreement applies.
